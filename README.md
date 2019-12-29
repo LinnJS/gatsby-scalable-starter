@@ -1,3 +1,9 @@
+<span align="center">
+  <a href="https://www.gatsbyjs.org">
+    <img alt="Gatsby" src="./src/assets/images/icon.png" />
+  </a>
+</span>
+
 <h1 align="center">
   Gatsby Scalable Starter
 </h1>
