@@ -1,0 +1,72 @@
+{
+  "name": "gatsby-scalable-starter",
+  "description": "Gatsby Scalable Starter, the starter with all the extras to quick start a scalable GatsbyJS application",
+  "version": "0.1.0",
+  "author": "Justin Linn <linnjsconsulting@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LinnJS/gatsby-scalable-starter"
+  },
+  "keywords": [
+    "gatsby",
+    "storybook",
+    "styled-components",
+    "reset-css",
+    "eslint",
+    "netlify",
+    "scalable"
+  ],
+  "scripts": {
+    "start": "run-p start:**",
+    "dev": "gatsby develop -H 0.0.0.0 -o",
+    "storybook": "start-storybook -p 9000 -c .storybook",
+    "build": "run-p 'build:!(storybook)'",
+    "build:gatsby": "gatsby build",
+    "build:storybook": "build-storybook -c .storybook -o storybook",
+    "serve": "gatsby serve -o -p 8080",
+    "clean": "gatsby clean",
+    "lint": "eslint src -c .eslintrc.js --ext js,jsx",
+    "lint:fix": "eslint src -c .eslintrc.js --fix --ext js,jsx"
+  },
+  "dependencies": {
+    "gatsby": "^2.15.6",
+    "gatsby-image": "^2.2.17",
+    "gatsby-plugin-manifest": "^2.2.14",
+    "gatsby-plugin-offline": "^3.0.2",
+    "gatsby-plugin-react-helmet": "^3.1.6",
+    "gatsby-plugin-root-import": "^2.0.5",
+    "gatsby-plugin-sharp": "^2.2.19",
+    "gatsby-plugin-styled-components": "^3.1.4",
+    "gatsby-source-filesystem": "^2.1.21",
+    "gatsby-transformer-sharp": "^2.2.13",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-helmet": "^5.2.1",
+    "styled-components": "^4.3.2",
+    "styled-reset-advanced": "^1.0.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^5.1.11",
+    "@storybook/addon-links": "^5.1.11",
+    "@storybook/addon-notes": "^5.1.11",
+    "@storybook/addons": "^5.1.11",
+    "@storybook/react": "^5.1.11",
+    "babel-plugin-styled-components": "^1.10.6",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-import-resolver-webpack": "^0.12.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "prettier": "^1.19.1",
+    "yarn-run-all": "^3.1.1"
+  }
+}
