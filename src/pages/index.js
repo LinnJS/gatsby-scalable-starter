@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { GatsbyTech } from '../assets/svg';
+import { GatsbyTech } from '../assets/svgs';
 
 import Layout from '../global/Layout';
 
