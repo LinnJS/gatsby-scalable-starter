@@ -18,7 +18,8 @@
     "scalable"
   ],
   "scripts": {
-    "start": "gatsby develop -H 0.0.0.0 -o",
+    "start": "gatsby develop -H 0.0.0.0",
+    "open": "gatsby develop -H 0.0.0.0 -o",
     "storybook": "start-storybook -p 9000 -c .storybook",
     "build": "gatsby build",
     "build:storybook": "build-storybook -c .storybook -o storybook",
