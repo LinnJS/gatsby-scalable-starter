@@ -37,9 +37,14 @@ module.exports = {
         defaultQuality: 75,
       },
     },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/`],
+      },
+    },
     'gatsby-plugin-root-import',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-offline',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-styled-components',

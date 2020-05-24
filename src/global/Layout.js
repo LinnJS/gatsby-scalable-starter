@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
+import Img from 'gatsby-image';
 import styled, { ThemeProvider } from 'styled-components';
+import { Helmet } from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
-import Image from '../components/Image';
-import theme from './theme';
 
+import theme from 'src/global/theme';
 import GlobalStyle from './GlobalStyle';
 
 const Layout = ({ children }) => {
@@ -46,7 +46,7 @@ const Layout = ({ children }) => {
           <ThemeProvider theme={isLightTheme ? theme.light : theme.dark}>
             <GlobalStyle />
             <Header>
-              <Image fixed={data.imageSharp.fixed} />
+              <Img fixed={data.imageSharp.fixed} />
               Gatsby Scalable <button onClick={() => toggleTheme(!isLightTheme)}>Toggle Theme</button>
             </Header>
             <>{children}</>
