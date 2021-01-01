@@ -1,16 +1,4 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
-
-const path = require('path');
-
-// enables absolute imports
-exports.onCreateWebpackConfig = ({ stage, actions }) => {
-  actions.setWebpackConfig({
-    resolve: {
-      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
-    },
-  });
-};
+/*  adds support for esModules via esm 
+    use ./gatsby-node.esm.js with esModules instead */
+const requireEsm = require('esm')(module);
+module.exports = requireEsm('./gatsby-node.esm.js');

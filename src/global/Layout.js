@@ -5,7 +5,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { Helmet } from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
-import theme from 'src/global/theme';
+import theme from 'global/theme';
 import GlobalStyle from './GlobalStyle';
 
 const Layout = ({ children }) => {

@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Layout from 'src/global/Layout';
-import { GatsbyTech } from 'src/assets/svgs';
+import Layout from 'global/Layout';
+import { GatsbyTech } from 'assets/svgs';
 
 const LandingPage = () => (
   <Layout>
