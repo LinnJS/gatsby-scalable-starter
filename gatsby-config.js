@@ -47,6 +47,7 @@ module.exports = {
     },
     'gatsby-plugin-root-import',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-gatsby-cloud',
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp', // needed for dynamic images
