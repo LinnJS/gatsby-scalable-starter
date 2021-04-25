@@ -1,6 +1,6 @@
 const theme = {
   light: {
-    background: 'white',
+    background: '#fefefe',
     buttonBackground: 'rebeccapurple',
     buttonText: 'black',
     color: 'black',
