@@ -45,11 +45,11 @@ module.exports = {
         precachePages: [`/`],
       },
     },
-    'gatsby-plugin-image',
     'gatsby-plugin-root-import',
     'gatsby-plugin-react-helmet',
-    'gatsby-transformer-sharp',
+    'gatsby-plugin-image',
     'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp', // needed for dynamic images
     'gatsby-plugin-styled-components',
   ],
 };
