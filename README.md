@@ -22,6 +22,7 @@
 - Prettier
 - React to SVG Generator
 - Mobile First Breakpoint utility
+- React Hook utilities
 
 ## Quick start
 
