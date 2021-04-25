@@ -8,12 +8,10 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'standard',
     'prettier',
-    'prettier/react',
     'eslint:recommended',
     'plugin:import/errors',
     'plugin:jsx-a11y/recommended',
     'plugin:prettier/recommended',
-    'prettier/react',
     'plugin:promise/recommended',
   ],
   globals: {
