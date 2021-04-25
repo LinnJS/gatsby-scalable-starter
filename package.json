@@ -1,7 +1,7 @@
 {
   "name": "gatsby-scalable-starter",
   "description": "Gatsby Scalable Starter, the starter with all the extras to quick start a scalable GatsbyJS application",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Justin Linn <linnjsconsulting@gmail.com>",
   "license": "MIT",
   "repository": {
