@@ -1,12 +1,21 @@
 import { createGlobalStyle } from 'styled-components';
-import reset from 'styled-reset-advanced';
+import { normalize } from 'styled-normalize';
 
 export default createGlobalStyle`
-  ${reset};
+  ${normalize};
+
+  html {
+    overflow-x: hidden;
+    background: ${({ theme }) => theme.background};
+    box-sizing: border-box;
+  }
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
 
   body {
     font-family: 'Avenir Next', 'Helvetica Neue', 'Helvetica', sans-serif;
-    font-weight: 500;
     background: ${({ theme }) => theme.background};
   }
 `;

@@ -31,7 +31,7 @@ const Page = styled.div`
 
   p {
     font-size: 14px;
-    color: #aaa;
+    color: #555;
     margin-top: 12px;
     letter-spacing: 10px;
     text-transform: uppercase;

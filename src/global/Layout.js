@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Img from 'gatsby-image';
 import styled, { ThemeProvider } from 'styled-components';
 import { Helmet } from 'react-helmet';
-import { StaticQuery, graphql } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 import theme from 'global/theme';
 import GlobalStyle from './GlobalStyle';
@@ -11,54 +11,44 @@ import GlobalStyle from './GlobalStyle';
 const Layout = ({ children }) => {
   const [isLightTheme, toggleTheme] = useState(true);
 
-  return (
-    <StaticQuery
-      query={graphql`
-        query SiteTitleQuery {
-          site {
-            siteMetadata {
-              title
-            }
-          }
-          imageSharp(fixed: { originalName: { eq: "icon.png" } }) {
-            id
-            fixed(height: 50, width: 50) {
-              base64
-              tracedSVG
-              aspectRatio
-              width
-              height
-              src
-              srcSet
-              srcWebp
-              srcSetWebp
-              originalName
-            }
-          }
+  const { site, icon } = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
         }
-      `}
-      render={(data) => (
-        <div>
-          <Helmet>
-            <title>{data.site.siteMetadata.title}</title>
-            <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-          </Helmet>
-          <ThemeProvider theme={isLightTheme ? theme.light : theme.dark}>
-            <GlobalStyle />
-            <Header>
-              <Img fixed={data.imageSharp.fixed} />
-              Gatsby Scalable <button onClick={() => toggleTheme(!isLightTheme)}>Toggle Theme</button>
-            </Header>
-            <>{children}</>
-          </ThemeProvider>
-        </div>
-      )}
-    />
+      }
+
+      icon: file(name: { eq: "icon" }) {
+        childrenImageSharp {
+          gatsbyImageData(layout: FIXED, width: 50, height: 50)
+        }
+      }
+    }
+  `);
+
+  return (
+    <div>
+      <Helmet>
+        <title>{site.siteMetadata.title}</title>
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+      </Helmet>
+
+      <ThemeProvider theme={isLightTheme ? theme.light : theme.dark}>
+        <GlobalStyle />
+        <Header>
+          <GatsbyImage alt="Gatsby icon" image={icon.childrenImageSharp[0].gatsbyImageData} />
+          Gatsby Scalable <button onClick={() => toggleTheme(!isLightTheme)}>Toggle Theme</button>
+        </Header>
+
+        <>{children}</>
+      </ThemeProvider>
+    </div>
   );
 };
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
 };
 
 const Header = styled.header`
