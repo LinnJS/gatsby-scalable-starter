@@ -4,6 +4,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { Helmet } from 'react-helmet';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import { GlobalStyles as GlobalTailwindStyles } from 'twin.macro';
 
 import theme from 'global/theme';
 import GlobalStyle from './GlobalStyle';
@@ -36,6 +37,7 @@ const Layout = ({ children }) => {
 
       <ThemeProvider theme={isLightTheme ? theme.light : theme.dark}>
         <GlobalStyle />
+        <GlobalTailwindStyles />
         <Header>
           <GatsbyImage alt="Gatsby icon" image={icon.childrenImageSharp[0].gatsbyImageData} />
           Gatsby Scalable <button onClick={() => toggleTheme(!isLightTheme)}>Toggle Theme</button>
