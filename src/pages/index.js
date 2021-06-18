@@ -24,7 +24,7 @@ const Page = styled.div`
   }
 
   p {
-    ${tw`text-gray-400 uppercase `};
+    ${tw`text-gray-500 uppercase `};
     letter-spacing: 10px;
   }
 
