@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import tw from 'twin.macro';
 
 import Layout from 'global/Layout';
 import { GatsbyTech } from 'assets/svgs';
@@ -15,26 +16,16 @@ const LandingPage = () => (
 );
 
 const Page = styled.div`
-  width: 100%;
-  height: 100vh;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  ${tw`flex flex-col items-center justify-center mx-auto max-w-7xl sm:px-6 lg:px-8 `};
+  height: 70vh;
 
   h1 {
-    font-size: 24px;
-    color: #555;
-    margin-top: 60px;
+    ${tw`m-16 text-2xl text-center text-gray-500 `};
   }
 
   p {
-    font-size: 14px;
-    color: #555;
-    margin-top: 12px;
+    ${tw`text-gray-500 uppercase `};
     letter-spacing: 10px;
-    text-transform: uppercase;
   }
 
   svg {
