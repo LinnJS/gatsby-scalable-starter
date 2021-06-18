@@ -4,7 +4,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { Helmet } from 'react-helmet';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { GlobalStyles as GlobalTailwindStyles } from 'twin.macro';
+import tw, { GlobalStyles as GlobalTailwindStyles } from 'twin.macro';
 
 import theme from 'global/theme';
 import GlobalStyle from './GlobalStyle';
@@ -36,11 +36,11 @@ const Layout = ({ children }) => {
       </Helmet>
 
       <ThemeProvider theme={isLightTheme ? theme.light : theme.dark}>
-        <GlobalStyle />
         <GlobalTailwindStyles />
+        <GlobalStyle />
         <Header>
           <GatsbyImage alt="Gatsby icon" image={icon.childrenImageSharp[0].gatsbyImageData} />
-          Gatsby Scalable <button onClick={() => toggleTheme(!isLightTheme)}>Toggle Theme</button>
+          <button onClick={() => toggleTheme(!isLightTheme)}>Toggle Theme</button>
         </Header>
 
         <>{children}</>
@@ -54,26 +54,17 @@ Layout.propTypes = {
 };
 
 const Header = styled.header`
-  align-items: center;
+  ${tw`fixed left-0 right-0 top-0 flex items-center justify-between h-20 px-3.5 py-8`};
   color: ${({ theme }) => theme.color};
-  display: flex;
-  height: 70px;
-  justify-content: space-between;
-  left: 0;
-  padding: 15px 30px;
-  position: fixed;
-  right: 0;
-  top: 0;
 
   button {
+    ${tw`px-2.5 py-3 rounded`};
     background: ${({ theme }) => theme.buttonBackground};
     color: ${({ theme }) => theme.buttonText};
-    padding: 10px 15px;
-    border-radius: 4px;
   }
 
   .gatsby-image-wrapper {
-    width: 100px;
+    ${tw`w-28`};
   }
 `;
 

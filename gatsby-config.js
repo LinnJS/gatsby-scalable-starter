@@ -1,6 +1,12 @@
 /* eslint-disable node/no-path-concat */
 
 module.exports = {
+  flags: {
+    FAST_DEV: true,
+    PARALLEL_SOURCING: false,
+    DEV_SSR: false,
+    FUNCTIONS: false,
+  },
   siteMetadata: {
     title: 'Gatsby Scalable Starter',
   },
@@ -52,5 +58,6 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp', // needed for dynamic images
     'gatsby-plugin-styled-components',
+    'gatsby-plugin-postcss',
   ],
 };
