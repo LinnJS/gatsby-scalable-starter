@@ -5,4 +5,4 @@
  */
 
 // internal import
-require('./src/global/tailwind.css');
+require('./src/tailwind.css');
