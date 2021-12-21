@@ -51,6 +51,5 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp', // needed for dynamic images
-    'gatsby-plugin-postcss',
   ],
 };
