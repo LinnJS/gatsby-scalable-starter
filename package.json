@@ -59,8 +59,7 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-helmet": "^6.1.0",
-    "twin.macro": "^2.8.2"
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.4.9",
