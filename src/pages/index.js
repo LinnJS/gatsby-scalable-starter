@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react'
-import { Popover, Transition } from '@headlessui/react'
-import { ChevronRightIcon, ExternalLinkIcon } from '@heroicons/react/solid'
+import React, { Fragment } from 'react';
+import { Popover, Transition } from '@headlessui/react';
+import { ChevronRightIcon, ExternalLinkIcon } from '@heroicons/react/solid';
 import {
   CloudUploadIcon,
   CogIcon,
@@ -10,7 +10,7 @@ import {
   ServerIcon,
   ShieldCheckIcon,
   XIcon,
-} from '@heroicons/react/outline'
+} from '@heroicons/react/outline';
 
 import { GatsbyTech } from 'assets/svgs';
 
@@ -19,7 +19,7 @@ const navigation = [
   { name: 'Features', href: '#' },
   { name: 'Marketplace', href: '#' },
   { name: 'Company', href: '#' },
-]
+];
 
 const features = [
   {
@@ -53,7 +53,7 @@ const features = [
     description: 'Quia qui et est officia cupiditate qui consectetur. Ratione similique et impedit ea ipsum et.',
     icon: ServerIcon,
   },
-]
+];
 
 const blogPosts = [
   {
@@ -113,7 +113,7 @@ const blogPosts = [
     },
     readingLength: '11 min',
   },
-]
+];
 
 const footerNavigation = {
   solutions: [
@@ -203,7 +203,7 @@ const footerNavigation = {
       ),
     },
   ],
-}
+};
 
 const LandingPage = () => {
   return (
@@ -317,6 +317,7 @@ const LandingPage = () => {
             </Popover.Panel>
           </Transition>
         </Popover>
+
         <main>
           <div className="pt-10 bg-gray-900 sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden">
             <div className="mx-auto max-w-7xl lg:px-8">
@@ -586,6 +587,7 @@ const LandingPage = () => {
             </div>
           </div>
         </main>
+
         <footer className="bg-gray-50" aria-labelledby="footer-heading">
           <h2 id="footer-heading" className="sr-only">
             Footer
@@ -614,7 +616,7 @@ const LandingPage = () => {
                 <div className="md:grid md:grid-cols-2 md:gap-8">
                   <div>
                     <h3 className="text-sm font-semibold tracking-wider text-gray-400 uppercase">Solutions</h3>
-                    <ul role="list" className="mt-4 space-y-4">
+                    <ul className="mt-4 space-y-4">
                       {footerNavigation.solutions.map((item) => (
                         <li key={item.name}>
                           <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
@@ -626,7 +628,7 @@ const LandingPage = () => {
                   </div>
                   <div className="mt-12 md:mt-0">
                     <h3 className="text-sm font-semibold tracking-wider text-gray-400 uppercase">Support</h3>
-                    <ul role="list" className="mt-4 space-y-4">
+                    <ul className="mt-4 space-y-4">
                       {footerNavigation.support.map((item) => (
                         <li key={item.name}>
                           <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
@@ -640,7 +642,7 @@ const LandingPage = () => {
                 <div className="md:grid md:grid-cols-2 md:gap-8">
                   <div>
                     <h3 className="text-sm font-semibold tracking-wider text-gray-400 uppercase">Company</h3>
-                    <ul role="list" className="mt-4 space-y-4">
+                    <ul className="mt-4 space-y-4">
                       {footerNavigation.company.map((item) => (
                         <li key={item.name}>
                           <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
@@ -652,7 +654,7 @@ const LandingPage = () => {
                   </div>
                   <div className="mt-12 md:mt-0">
                     <h3 className="text-sm font-semibold tracking-wider text-gray-400 uppercase">Legal</h3>
-                    <ul role="list" className="mt-4 space-y-4">
+                    <ul className="mt-4 space-y-4">
                       {footerNavigation.legal.map((item) => (
                         <li key={item.name}>
                           <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
@@ -672,8 +674,7 @@ const LandingPage = () => {
         </footer>
       </div>
     </div>
-  )
-}
-
+  );
+};
 
 export default LandingPage;

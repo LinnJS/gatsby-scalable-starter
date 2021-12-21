@@ -15,13 +15,12 @@
 
 - Gatsby (v3)
 - Storybook (v6)
-- Styled Components with Theming (v5)
-- Styled Normalized
+- Twind
+- Tailwind Reset
 - Netlify Config
 - ESLint (Standard)
 - Prettier
 - React to SVG Generator
-- Mobile First Breakpoint utility
 - React Hook utilities
 
 ## Quick start
@@ -45,14 +44,15 @@ You are welcome to come up with other solutions, but we typically do this:
 
 ## How to work via styles?
 
-`styled-components` (https://www.styled-components.com/).
+We use TailwindCSS to style components in this Gatsby Scalable Starter, but we used a CSS-in-JS library, Twind, that extends additional functionality so we can easily style with JS variables.
 
-### How to theme with styled-components?
+`Twind` (https://twind.dev/).
 
-- There is a theme object located in the globals directory, this is where styled are declared
-- ThemeProvider is located in Layout where theme is passed to all child styled-components
+### How to theme with Twind?
 
-`ThemeProvider` (https://www.styled-components.com/docs/api#themeprovider).
+- There is a setup function located in the root directory, this is where the theme is setup and extended
+
+`Setup Function in Twind` (https://twind.dev/handbook/configuration.html#theme).
 
 ## Deploy
 
