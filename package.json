@@ -34,6 +34,11 @@
   "lint-staged": {
     "*.(js|jsx)": "yarn lint:fix"
   },
+  "resolutions": {
+    "graphql": "^15.4.0",
+    "graphql-compose": "^7.25.0",
+    "webpack": "^5.24.2"
+  },
   "dependencies": {
     "gatsby": "^4.4.0",
     "gatsby-plugin-gatsby-cloud": "^4.4.0",
