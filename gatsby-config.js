@@ -1,9 +1,6 @@
 /* eslint-disable node/no-path-concat */
 
 module.exports = {
-  flags: {
-    FAST_DEV: true,
-  },
   siteMetadata: {
     title: 'Gatsby Scalable Starter',
   },
