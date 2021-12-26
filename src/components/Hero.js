@@ -22,7 +22,7 @@ const Hero = () => {
                 </span>
 
                 <span className={tw`ml-4 text-sm`}>Visit our careers page</span>
-                <ChevronRightIcon className="w-5 h-5 ml-2 text-gray-500" aria-hidden="true" />
+                <ChevronRightIcon className={tw`w-5 h-5 ml-2 text-gray-500`} aria-hidden="true" />
               </a>
               <h1
                 className={tw`mt-4 text-4xl font-extrabold tracking-tight text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl`}
@@ -43,7 +43,7 @@ const Hero = () => {
                 <form action="#" className={tw`sm:max-w-xl sm:mx-auto lg:mx-0`}>
                   <div className={tw`sm:flex`}>
                     <div className={tw`flex-1 min-w-0`}>
-                      <label htmlFor="email" className="sr-only">
+                      <label htmlFor="email" className={tw`sr-only`}>
                         Email address
                       </label>
                       <input
