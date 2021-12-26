@@ -2,8 +2,6 @@
 import React from 'react';
 
 // internal imports
-// eslint-disable-next-line no-unused-vars
-import { GatsbyTech } from 'assets/svgs';
 import Header from 'components/Header';
 import Hero from 'components/Hero';
 import FeaturePreview from 'components/FeaturePreview';
