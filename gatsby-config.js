@@ -46,6 +46,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-root-import',
+    'gatsby-plugin-postcss',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-gatsby-cloud',
     'gatsby-plugin-image',
