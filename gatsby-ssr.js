@@ -6,36 +6,36 @@
 
 // internal import
 require('./src/tailwind.css');
-// const { setup } = require('twind');
-// const { asyncVirtualSheet, getStyleTagProperties } = require('twind/server');
-// const React = require('react');
+const { setup } = require('twind');
+const { asyncVirtualSheet, getStyleTagProperties } = require('twind/server');
+const React = require('react');
 
-// const sheet = asyncVirtualSheet();
+const sheet = asyncVirtualSheet();
 
-// setup({ sheet });
+setup({ sheet });
 
-// exports.wrapPageElement = ({ element }) => {
-//   sheet.reset();
+exports.wrapPageElement = ({ element }) => {
+  sheet.reset();
 
-//   return element;
-// };
+  return element;
+};
 
-// exports.onRenderBody = ({ setHeadComponents, pathname }) => {
-//   const { id, textContent } = getStyleTagProperties(sheet);
+exports.onRenderBody = ({ setHeadComponents, pathname }) => {
+  const { id, textContent } = getStyleTagProperties(sheet);
 
-//   const styleProps = {
-//     id,
-//     dangerouslySetInnerHTML: {
-//       __html: textContent,
-//     },
-//   };
+  // const styleProps = {
+  //   id,
+  //   dangerouslySetInnerHTML: {
+  //     __html: textContent,
+  //   },
+  // };
 
-//   setHeadComponents([
-//     React.createElement('style', {
-//       id,
-//       dangerouslySetInnerHTML: {
-//         __html: textContent,
-//       },
-//     }),
-//   ]);
-// };
+  setHeadComponents([
+    React.createElement('style', {
+      id: `ssr-${id}`,
+      dangerouslySetInnerHTML: {
+        __html: textContent,
+      },
+    }),
+  ]);
+};
