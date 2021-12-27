@@ -1,5 +1,6 @@
 // external imports
 import React from 'react';
+import { tw } from 'twind';
 
 // internal imports
 import Header from 'components/Header';
@@ -13,8 +14,8 @@ import Footer from 'components/Footer';
 
 const LandingPage = () => {
   return (
-    <div className="bg-white">
-      <div className="relative overflow-hidden">
+    <div className={tw`bg-white`}>
+      <div className={tw`relative overflow-hidden`}>
         <Header />
 
         <main>
