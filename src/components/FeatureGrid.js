@@ -1,50 +1,23 @@
 import React from 'react';
 import { tw } from 'twind';
+import { useStaticQuery, graphql } from 'gatsby';
 
-import {
-  CloudUploadIcon,
-  CogIcon,
-  LockClosedIcon,
-  RefreshIcon,
-  ServerIcon,
-  ShieldCheckIcon,
-} from '@heroicons/react/outline';
-
-const features = [
-  {
-    name: 'Push to Deploy',
-    description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi vitae lobortis.',
-    icon: CloudUploadIcon,
-  },
-  {
-    name: 'SSL Certificates',
-    description: 'Qui aut temporibus nesciunt vitae dicta repellat sit dolores pariatur. Temporibus qui illum aut.',
-    icon: LockClosedIcon,
-  },
-  {
-    name: 'Simple Queues',
-    description: 'Rerum quas incidunt deleniti quaerat suscipit mollitia. Amet repellendus ut odit dolores qui.',
-    icon: RefreshIcon,
-  },
-  {
-    name: 'Advanced Security',
-    description: 'Ullam laboriosam est voluptatem maxime ut mollitia commodi. Et dignissimos suscipit perspiciatis.',
-    icon: ShieldCheckIcon,
-  },
-  {
-    name: 'Powerful API',
-    description:
-      'Ab a facere voluptatem in quia corrupti veritatis aliquam. Veritatis labore quaerat ipsum quaerat id.',
-    icon: CogIcon,
-  },
-  {
-    name: 'Database Backups',
-    description: 'Quia qui et est officia cupiditate qui consectetur. Ratione similique et impedit ea ipsum et.',
-    icon: ServerIcon,
-  },
-];
+import { Icon } from 'primitives';
 
 const FeatureGrid = () => {
+  const { features } = useStaticQuery(graphql`
+    query FeatureGrid {
+      features: allFeature {
+        nodes {
+          id
+          name
+          description
+          icon
+        }
+      }
+    }
+  `);
+
   return (
     <section className={tw`relative py-16 bg-white sm:py-24 lg:py-32`}>
       <div className={tw`max-w-md px-4 mx-auto text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl`}>
@@ -56,9 +29,10 @@ const FeatureGrid = () => {
           Phasellus lorem quam molestie id quisque diam aenean nulla in. Accumsan in quis quis nunc, ullamcorper
           malesuada. Eleifend condimentum id viverra nulla.
         </p>
+
         <div className={tw`mt-12`}>
           <div className={tw`grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3`}>
-            {features.map((feature) => (
+            {features.nodes.map((feature) => (
               <div key={feature.name} className={tw`pt-6`}>
                 <div className={tw`flow-root px-6 pb-8 rounded-lg bg-gray-50`}>
                   <div className={`-mt-6`}>
@@ -66,7 +40,7 @@ const FeatureGrid = () => {
                       <span
                         className={tw`inline-flex items-center justify-center p-3 rounded-md shadow-lg bg-gradient-to-r from-teal-500 to-cyan-600`}
                       >
-                        <feature.icon className={tw`w-6 h-6 text-white`} aria-hidden="true" />
+                        <Icon name={feature.icon} className={tw`w-6 h-6 text-white`} aria-hidden="true" />
                       </span>
                     </div>
                     <h3 className={tw`mt-8 text-lg font-medium tracking-tight text-gray-900`}>{feature.name}</h3>
