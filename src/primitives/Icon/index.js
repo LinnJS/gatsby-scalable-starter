@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -9,6 +10,8 @@ import {
   ServerIcon,
   ShieldCheckIcon,
 } from '@heroicons/react/outline';
+
+import { FacebookIcon, InstagramIcon, TwitterIcon, GithubIcon, DribbbleIcon } from './icons';
 
 const Icon = ({ name, ...rest }) => {
   switch (name) {
@@ -24,6 +27,16 @@ const Icon = ({ name, ...rest }) => {
       return <ServerIcon {...rest} />;
     case 'ShieldCheckIcon':
       return <ShieldCheckIcon {...rest} />;
+    case 'Facebook':
+      return <FacebookIcon {...rest} />;
+    case 'Instagram':
+      return <InstagramIcon {...rest} />;
+    case 'Twitter':
+      return <TwitterIcon {...rest} />;
+    case 'Github':
+      return <GithubIcon {...rest} />;
+    case 'Dribbble':
+      return <DribbbleIcon {...rest} />;
     default:
       return null;
   }
