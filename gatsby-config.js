@@ -40,11 +40,19 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blogPosts`,
+        path: `${__dirname}/src/content/blogPosts`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-offline`,
       options: {
         precachePages: [`/`],
       },
     },
+    `gatsby-transformer-remark`,
     'gatsby-plugin-root-import',
     'gatsby-plugin-postcss',
     'gatsby-plugin-react-helmet',

@@ -1,67 +1,38 @@
 import React from 'react';
 import { tw } from 'twind';
-
-const blogPosts = [
-  {
-    id: 1,
-    title: 'Boost your conversion rate',
-    href: '#',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-    category: { name: 'Article', href: '#' },
-    imageUrl:
-      'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-    preview:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
-    author: {
-      name: 'Roel Aufderehar',
-      imageUrl:
-        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      href: '#',
-    },
-    readingLength: '6 min',
-  },
-  {
-    id: 2,
-    title: 'How to use search engine optimization to drive sales',
-    href: '#',
-    date: 'Mar 10, 2020',
-    datetime: '2020-03-10',
-    category: { name: 'Video', href: '#' },
-    imageUrl:
-      'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-    preview:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
-    author: {
-      name: 'Brenna Goyette',
-      imageUrl:
-        'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      href: '#',
-    },
-    readingLength: '4 min',
-  },
-  {
-    id: 3,
-    title: 'Improve your customer experience',
-    href: '#',
-    date: 'Feb 12, 2020',
-    datetime: '2020-02-12',
-    category: { name: 'Case Study', href: '#' },
-    imageUrl:
-      'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-    preview:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
-    author: {
-      name: 'Daniela Metz',
-      imageUrl:
-        'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      href: '#',
-    },
-    readingLength: '11 min',
-  },
-];
+import { graphql, useStaticQuery } from 'gatsby';
 
 const Blog = () => {
+  const { blogPosts } = useStaticQuery(graphql`
+    query AllBlogs {
+      blogPosts: allFile(filter: { sourceInstanceName: { eq: "blogPosts" } }) {
+        nodes {
+          childMarkdownRemark {
+            id
+            timeToRead
+            frontmatter {
+              title
+              preview
+              path
+              imageUrl
+              date
+              datetime
+              author {
+                name
+                href
+                imageUrl
+              }
+              category {
+                name
+                href
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+
   return (
     <section className={tw`relative py-16 bg-gray-50 sm:py-24 lg:py-32`}>
       <div className={tw`relative`}>
@@ -77,48 +48,54 @@ const Blog = () => {
         <div
           className={tw`grid max-w-md gap-8 px-4 mx-auto mt-12 sm:max-w-lg sm:px-6 lg:px-8 lg:grid-cols-3 lg:max-w-7xl`}
         >
-          {blogPosts.map((post) => (
-            <div key={post.id} className={tw`flex flex-col overflow-hidden rounded-lg shadow-lg`}>
-              <div className={tw`flex-shrink-0`}>
-                <img className={tw`object-cover w-full h-48`} src={post.imageUrl} alt="" />
-              </div>
+          {blogPosts.nodes.map(({ childMarkdownRemark }) => {
+            const frontmatter = childMarkdownRemark.frontmatter;
+            const { id, timeToRead } = childMarkdownRemark;
+            const { category, author, imageUrl, title, preview, datetime, date, href } = frontmatter;
 
-              <div className={tw`flex flex-col justify-between flex-1 p-6 bg-white`}>
-                <div className={tw`flex-1`}>
-                  <p className={tw`text-sm font-medium text-cyan-600`}>
-                    <a href={post.category.href} className={tw`hover:underline`}>
-                      {post.category.name}
-                    </a>
-                  </p>
-                  <a href={post.href} className={tw`block mt-2`}>
-                    <p className={tw`text-xl font-semibold text-gray-900`}>{post.title}</p>
-                    <p className={tw`mt-3 text-base text-gray-500`}>{post.preview}</p>
-                  </a>
+            return (
+              <div key={id} className={tw`flex flex-col overflow-hidden rounded-lg shadow-lg`}>
+                <div className={tw`flex-shrink-0`}>
+                  <img className={tw`object-cover w-full h-48`} src={imageUrl} alt="" />
                 </div>
 
-                <div className={tw`flex items-center mt-6`}>
-                  <div className={tw`flex-shrink-0`}>
-                    <a href={post.author.href}>
-                      <img className={tw`w-10 h-10 rounded-full`} src={post.author.imageUrl} alt={post.author.name} />
+                <div className={tw`flex flex-col justify-between flex-1 p-6 bg-white`}>
+                  <div className={tw`flex-1`}>
+                    <p className={tw`text-sm font-medium text-cyan-600`}>
+                      <a href={category.href} className={tw`hover:underline`}>
+                        {category.name}
+                      </a>
+                    </p>
+                    <a href={href} className={tw`block mt-2`}>
+                      <p className={tw`text-xl font-semibold text-gray-900`}>{title}</p>
+                      <p className={tw`mt-3 text-base text-gray-500`}>{preview}</p>
                     </a>
                   </div>
 
-                  <div className={tw`ml-3`}>
-                    <p className={tw`text-sm font-medium text-gray-900`}>
-                      <a href={post.author.href} className={tw`hover:underline`}>
-                        {post.author.name}
+                  <div className={tw`flex items-center mt-6`}>
+                    <div className={tw`flex-shrink-0`}>
+                      <a href={author.href}>
+                        <img className={tw`w-10 h-10 rounded-full`} src={author.imageUrl} alt={author.name} />
                       </a>
-                    </p>
-                    <div className={tw`flex space-x-1 text-sm text-gray-500`}>
-                      <time dateTime={post.datetime}>{post.date}</time>
-                      <span aria-hidden="true">&middot;</span>
-                      <span>{post.readingLength} read</span>
+                    </div>
+
+                    <div className={tw`ml-3`}>
+                      <p className={tw`text-sm font-medium text-gray-900`}>
+                        <a href={author.href} className={tw`hover:underline`}>
+                          {author.name}
+                        </a>
+                      </p>
+                      <div className={tw`flex space-x-1 text-sm text-gray-500`}>
+                        <time dateTime={datetime}>{date}</time>
+                        <span aria-hidden="true">&middot;</span>
+                        <span>{timeToRead} minute read</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
