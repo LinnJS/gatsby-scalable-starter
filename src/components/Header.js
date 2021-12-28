@@ -2,15 +2,24 @@ import React, { Fragment } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { tw } from 'twind';
-
-const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
-];
+import { useStaticQuery, graphql } from 'gatsby';
 
 const Header = () => {
+  const { navigationContent } = useStaticQuery(graphql`
+    query NavigationContent {
+      navigationContent: file(name: { eq: "navigation" }) {
+        childrenJsonJson {
+          navigation {
+            name
+            href
+          }
+        }
+      }
+    }
+  `);
+
+  const { navigation } = navigationContent.childrenJsonJson[0];
+
   return (
     <Popover as="header" className={tw`relative`}>
       <div className={tw`pt-6 bg-gray-900`}>

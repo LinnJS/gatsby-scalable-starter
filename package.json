@@ -55,6 +55,7 @@
     "gatsby-plugin-root-import": "^2.0.8",
     "gatsby-plugin-sharp": "^4.4.0",
     "gatsby-source-filesystem": "^4.4.0",
+    "gatsby-transformer-json": "^4.4.0",
     "gatsby-transformer-remark": "^5.4.0",
     "gatsby-transformer-sharp": "^4.4.0",
     "lint-staged": "^12.1.4",

@@ -2,33 +2,33 @@
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Scalable Starter',
+    title: `Gatsby Scalable Starter`,
   },
   plugins: [
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Gatsby Scalable Starter',
-        short_name: 'Gatsby Scalable',
-        start_url: '/',
-        background_color: '#ffffff',
-        theme_color: '#744C9E',
-        display: 'standalone',
-        icon: 'src/assets/images/icon.png',
+        name: `Gatsby Scalable Starter`,
+        short_name: `Gatsby Scalable`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#744C9E`,
+        display: `standalone`,
+        icon: `src/assets/images/icon.png`,
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/assets/images`,
-        name: 'images',
+        name: `images`,
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/assets/svgs`,
-        name: 'svgs',
+        name: `svgs`,
       },
     },
     {
@@ -47,18 +47,26 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `./src/content/json`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-offline`,
       options: {
         precachePages: [`/`],
       },
     },
     `gatsby-transformer-remark`,
-    'gatsby-plugin-root-import',
-    'gatsby-plugin-postcss',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-gatsby-cloud',
-    'gatsby-plugin-image',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp', // needed for dynamic images
+    `gatsby-transformer-json`,
+    `gatsby-plugin-root-import`,
+    `gatsby-plugin-postcss`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-gatsby-cloud`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`, // needed for dynamic images
   ],
 };

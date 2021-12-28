@@ -49,7 +49,7 @@ const Blog = () => {
           className={tw`grid max-w-md gap-8 px-4 mx-auto mt-12 sm:max-w-lg sm:px-6 lg:px-8 lg:grid-cols-3 lg:max-w-7xl`}
         >
           {blogPosts.nodes.map(({ childMarkdownRemark }) => {
-            const frontmatter = childMarkdownRemark.frontmatter;
+            const frontmatter = childMarkdownRemark?.frontmatter;
             const { id, timeToRead } = childMarkdownRemark;
             const { category, author, imageUrl, title, preview, datetime, date, href } = frontmatter;
 
