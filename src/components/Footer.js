@@ -118,9 +118,9 @@ const Footer = () => {
             </div>
           </div>
           <div className={tw`grid grid-cols-2 gap-8 mt-12 xl:mt-0 xl:col-span-2`}>
-            <div className={tw`md:grid md:grid-cols-2 md:gap-8"`}>
+            <div className={tw`md:grid md:grid-cols-2 md:gap-8`}>
               <div>
-                <h3 className={tw`text-sm font-semibold tracking-wider text-gray-400 uppercase"`}>Solutions</h3>
+                <h3 className={tw`text-sm font-semibold tracking-wider text-gray-400 uppercase`}>Solutions</h3>
                 <ul className={tw`mt-4 space-y-4`}>
                   {footerNavigation.solutions.map((item) => (
                     <li key={item.name}>

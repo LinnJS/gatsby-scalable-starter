@@ -37,6 +37,7 @@ const Header = () => {
                 </Popover.Button>
               </div>
             </div>
+
             <div className={tw`hidden space-x-8 md:flex md:ml-10`}>
               {navigation.map((item) => (
                 <a
@@ -49,6 +50,7 @@ const Header = () => {
               ))}
             </div>
           </div>
+
           <div className={tw`hidden md:flex md:items-center md:space-x-6`}>
             <a href="#" className={tw`text-base font-medium text-white hover:text-gray-300`}>
               Log in
@@ -82,6 +84,7 @@ const Header = () => {
                   alt=""
                 />
               </div>
+
               <div className={tw`-mr-2`}>
                 <Popover.Button
                   className={tw`inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-600`}
@@ -91,6 +94,7 @@ const Header = () => {
                 </Popover.Button>
               </div>
             </div>
+
             <div className={tw`pt-5 pb-6`}>
               <div className={tw`px-2 space-y-1`}>
                 {navigation.map((item) => (
@@ -103,6 +107,7 @@ const Header = () => {
                   </a>
                 ))}
               </div>
+
               <div className={tw`px-5 mt-6`}>
                 <a
                   href="#"
@@ -111,6 +116,7 @@ const Header = () => {
                   Start free trial
                 </a>
               </div>
+
               <div className={tw`px-5 mt-6`}>
                 <p className={tw`text-base font-medium text-center text-gray-500`}>
                   Existing customer?{' '}
