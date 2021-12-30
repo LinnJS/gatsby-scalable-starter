@@ -18,6 +18,21 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          src: 'src',
+          assets: 'src/assets',
+          components: 'src/components',
+          content: 'src/content',
+          pages: 'src/pages',
+          primitives: 'src/primitives',
+          utils: 'src/utils',
+        },
+        extensions: ['js'],
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/assets/images`,
