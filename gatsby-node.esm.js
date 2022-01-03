@@ -4,17 +4,6 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-// enables absolute imports
-export const onCreateWebpackConfig = ({ actions }) => {
-  actions.setWebpackConfig({
-    resolve: {
-      alias: {
-        'node:async_hooks': 'async_hooks',
-      },
-    },
-  });
-};
-
 export const sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
   const features = [
     {

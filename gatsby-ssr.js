@@ -5,40 +5,42 @@
  */
 
 // internal import
-import { setup } from 'twind';
-import { asyncVirtualSheet, getStyleTagProperties } from 'twind/server';
-import { createElement } from 'react';
-import './src/tailwind.css';
+// import { setup } from 'twind';
+// import { asyncVirtualSheet, getStyleTagProperties } from 'twind/server';
+// import { createElement } from 'react';
+// import async_hooks from 'async_hooks';
 
-const sheet = asyncVirtualSheet();
+// import './src/tailwind.css';
 
-setup({ sheet });
+// const sheet = asyncVirtualSheet();
 
-export const wrapPageElement = ({ element }) => {
-  sheet.reset();
+// setup({ sheet });
 
-  return element;
-};
+// export const wrapPageElement = ({ element }) => {
+//   sheet.reset();
 
-export const onRenderBody = ({ setHeadComponents, pathname }) => {
-  console.log('sheet: ', sheet);
-  const { id, textContent } = getStyleTagProperties(sheet);
-  console.log('twind props: ', { id, textContent });
-  const twindId = `twind-ssr-${id}-${Math.random()}`;
+//   return element;
+// };
 
-  // eslint-disable-next-line no-unused-vars
-  const styleProps = {
-    id,
-    dangerouslySetInnerHTML: {
-      __html: textContent,
-    },
-  };
-  setHeadComponents([
-    createElement('style', {
-      id: twindId,
-      dangerouslySetInnerHTML: {
-        __html: textContent,
-      },
-    }),
-  ]);
-};
+// export const onRenderBody = ({ setHeadComponents, pathname }) => {
+//   console.log('sheet: ', sheet);
+//   const { id, textContent } = getStyleTagProperties(sheet);
+//   console.log('twind props: ', { id, textContent });
+//   const twindId = `twind-ssr-${id}-${Math.random()}`;
+
+//   // eslint-disable-next-line no-unused-vars
+//   const styleProps = {
+//     id,
+//     dangerouslySetInnerHTML: {
+//       __html: textContent,
+//     },
+//   };
+//   setHeadComponents([
+//     createElement('style', {
+//       id: twindId,
+//       dangerouslySetInnerHTML: {
+//         __html: textContent,
+//       },
+//     }),
+//   ]);
+// };

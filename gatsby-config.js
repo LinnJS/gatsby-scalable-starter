@@ -28,6 +28,7 @@ module.exports = {
           pages: 'src/pages',
           primitives: 'src/primitives',
           utils: 'src/utils',
+          'node:async_hooks': 'async_hooks',
         },
         extensions: ['js'],
       },
