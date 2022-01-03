@@ -15,7 +15,7 @@
 
 - Gatsby (v3)
 - Storybook (v6)
-- Twind
+- Twin.macro
 - Tailwind Reset
 - Netlify Config
 - ESLint (Standard)
@@ -42,17 +42,11 @@ You are welcome to come up with other solutions, but we typically do this:
 2. Navigate to the directory where there is your svg (e.g. `example.svg`)
 3. Run `svgtoreact example Example`, this then creates `Example.js` (the React component for the svg). You can then import this component like any other React component.
 
-## How to work via styles?
+## How to work via Twin.Macro?
 
-We use TailwindCSS to style components in this Gatsby Scalable Starter, but we used a CSS-in-JS library, Twind, that extends additional functionality so we can easily style with JS variables.
+You can use Tailwind the way you are used to with the added functionality of styled-components and CSS-in-JS with Twin directly. Look at the docs for examples.
 
-`Twind` (https://twind.dev/).
-
-### How to theme with Twind?
-
-- There is a setup function located in the root directory, this is where the theme is setup and extended
-
-`Setup Function in Twind` (https://twind.dev/handbook/configuration.html#theme).
+`twin.macro` (https://github.com/ben-rogerson/twin.macro).
 
 ## Deploy
 
