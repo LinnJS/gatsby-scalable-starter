@@ -1,5 +1,5 @@
 import React from 'react';
-import { tw } from 'twind';
+import tw from 'twin.macro';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import { Icon } from 'primitives';

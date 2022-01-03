@@ -1,6 +1,6 @@
 // external imports
 import React from 'react';
-import { tw } from 'twind';
+import tw from 'twin.macro';
 
 // internal imports
 import Header from 'components/Header';

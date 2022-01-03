@@ -38,6 +38,11 @@
   "lint-staged": {
     "*.(js|jsx)": "yarn lint:fix"
   },
+  "babelMacros": {
+    "twin": {
+      "preset": "styled-components"
+    }
+  },
   "resolutions": {
     "graphql": "^15.4.0",
     "graphql-compose": "^7.25.0",
@@ -57,6 +62,7 @@
     "gatsby-plugin-react-helmet": "^5.4.0",
     "gatsby-plugin-root-import": "^2.0.8",
     "gatsby-plugin-sharp": "^4.4.0",
+    "gatsby-plugin-styled-components": "^5.4.0",
     "gatsby-source-filesystem": "^4.4.0",
     "gatsby-transformer-json": "^4.4.0",
     "gatsby-transformer-remark": "^5.4.0",
@@ -66,6 +72,8 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
+    "styled-components": "^5.3.3",
+    "twin.macro": "^2.8.2",
     "twind": "^0.16.16",
     "yarn": "^1.22.17"
   },

@@ -1,5 +1,5 @@
 import React from 'react';
-import { tw } from 'twind';
+import tw from 'twin.macro';
 
 const Testimonial = () => {
   return (
@@ -8,9 +8,7 @@ const Testimonial = () => {
         <div className={tw`relative lg:-my-8`}>
           <div aria-hidden="true" className={tw`absolute inset-x-0 top-0 bg-white h-1/2 lg:hidden`} />
           <div className={tw`max-w-md px-4 mx-auto sm:max-w-3xl sm:px-6 lg:p-0 lg:h-full`}>
-            <div
-              className={tw`overflow-hidden shadow-xl aspect-w-10 aspect-h-6 rounded-xl sm:aspect-w-16 sm:aspect-h-7 lg:aspect-none lg:h-full`}
-            >
+            <div className="overflow-hidden shadow-xl aspect-w-10 aspect-h-6 rounded-xl sm:aspect-w-16 sm:aspect-h-7 lg:aspect-none lg:h-full">
               <img
                 className={tw`object-cover lg:h-full lg:w-full`}
                 src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2102&q=80"

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
-import { tw } from 'twind';
+import tw from 'twin.macro';
 import { useStaticQuery, graphql } from 'gatsby';
 
 const Header = () => {
@@ -38,9 +38,7 @@ const Header = () => {
                 />
               </a>
               <div className={tw`flex items-center -mr-2 md:hidden`}>
-                <Popover.Button
-                  className={tw`inline-flex items-center justify-center p-2 text-gray-400 bg-gray-900 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white`}
-                >
+                <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-gray-900 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white">
                   <span className={tw`sr-only`}>Open main menu</span>
                   <MenuIcon className={tw`w-6 h-6`} aria-hidden="true" />
                 </Popover.Button>
@@ -84,7 +82,7 @@ const Header = () => {
         leaveTo="opacity-0 scale-95"
       >
         <Popover.Panel focus className={tw`absolute inset-x-0 top-0 p-2 transition origin-top transform md:hidden`}>
-          <div className={tw`overflow-hidden bg-white rounded-lg shadow-md ring-1 ring-black ring-opacity-5`}>
+          <div className="overflow-hidden bg-white rounded-lg shadow-md ring-1 ring-black ring-opacity-5">
             <div className={tw`flex items-center justify-between px-5 pt-4`}>
               <div>
                 <img
@@ -95,9 +93,7 @@ const Header = () => {
               </div>
 
               <div className={tw`-mr-2`}>
-                <Popover.Button
-                  className={tw`inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-600`}
-                >
+                <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-600">
                   <span className={tw`sr-only`}>Close menu</span>
                   <XIcon className={tw`w-6 h-6`} aria-hidden="true" />
                 </Popover.Button>

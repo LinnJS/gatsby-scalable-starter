@@ -14,13 +14,7 @@
 
 // const sheet = asyncVirtualSheet();
 
-// setup({ sheet });
-
-// export const wrapPageElement = ({ element }) => {
-//   sheet.reset();
-
-//   return element;
-// };
+// // setup({ sheet });
 
 // export const onRenderBody = ({ setHeadComponents, pathname }) => {
 //   console.log('sheet: ', sheet);
@@ -28,13 +22,6 @@
 //   console.log('twind props: ', { id, textContent });
 //   const twindId = `twind-ssr-${id}-${Math.random()}`;
 
-//   // eslint-disable-next-line no-unused-vars
-//   const styleProps = {
-//     id,
-//     dangerouslySetInnerHTML: {
-//       __html: textContent,
-//     },
-//   };
 //   setHeadComponents([
 //     createElement('style', {
 //       id: twindId,

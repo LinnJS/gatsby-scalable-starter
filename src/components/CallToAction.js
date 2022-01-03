@@ -1,6 +1,6 @@
 import React from 'react';
 import { ExternalLinkIcon } from '@heroicons/react/solid';
-import { tw } from 'twind';
+import tw from 'twin.macro';
 
 const CallToAction = () => {
   return (

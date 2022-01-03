@@ -1,7 +1,7 @@
 //  external imports
 import React from 'react';
 import { ChevronRightIcon } from '@heroicons/react/solid';
-import { tw } from 'twind';
+import tw from 'twin.macro';
 
 // internal imports
 import { GatsbyTech } from 'assets/svgs';

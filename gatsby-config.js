@@ -76,6 +76,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
+    `gatsby-plugin-styled-components`,
     `gatsby-transformer-json`,
     `gatsby-plugin-root-import`,
     `gatsby-plugin-postcss`,
