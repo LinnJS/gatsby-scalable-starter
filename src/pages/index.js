@@ -14,8 +14,8 @@ import Footer from 'components/Footer';
 
 const LandingPage = () => {
   return (
-    <div className={tw`bg-white`}>
-      <div className={tw`relative overflow-hidden`}>
+    <div css={tw`bg-white`}>
+      <div css={tw`relative overflow-hidden`}>
         <Header />
 
         <main>
