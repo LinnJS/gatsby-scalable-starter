@@ -4,5 +4,4 @@
  * See: https://www.gatsbyjs.org/docs/ssr-apis/
  */
 
-// internal import
-require('./src/global/tailwind.css');
+require('./src/tailwind.css');

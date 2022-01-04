@@ -27,6 +27,8 @@ module.exports = {
   },
   plugins: ['react', 'import', 'jsx-a11y', 'promise', 'standard', 'prettier', 'html', 'react-hooks'],
   rules: {
+    // delete rule for production only for starter purposes
+    'jsx-a11y/anchor-is-valid': [0],
     'react/jsx-filename-extension': [
       1,
       {

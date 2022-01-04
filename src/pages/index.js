@@ -1,36 +1,41 @@
+// external imports
 import React from 'react';
-import styled from 'styled-components';
 import tw from 'twin.macro';
 
-import Layout from 'global/Layout';
-import { GatsbyTech } from 'assets/svgs';
+// internal imports
+import Header from 'components/Header';
+import Hero from 'components/Hero';
+import FeaturePreview from 'components/FeaturePreview';
+import FeatureGrid from 'components/FeatureGrid';
+import Testimonial from 'components/Testimonial';
+import Blog from 'components/Blog';
+import CallToAction from 'components/CallToAction';
+import Footer from 'components/Footer';
 
-const LandingPage = () => (
-  <Layout>
-    <Page>
-      <h1>Gatsby Scalable</h1>
-      <p>Starter</p>
-      <GatsbyTech />
-    </Page>
-  </Layout>
-);
+const LandingPage = () => {
+  return (
+    <div css={tw`bg-white`}>
+      <div css={tw`relative overflow-hidden`}>
+        <Header />
 
-const Page = styled.div`
-  ${tw`flex flex-col items-center justify-center mx-auto max-w-7xl sm:px-6 lg:px-8 `};
-  height: 70vh;
+        <main>
+          <Hero />
 
-  h1 {
-    ${tw`m-16 text-2xl text-center text-gray-500 `};
-  }
+          <FeaturePreview />
 
-  p {
-    ${tw`text-gray-500 uppercase `};
-    letter-spacing: 10px;
-  }
+          <FeatureGrid />
 
-  svg {
-    margin-top: 80px;
-  }
-`;
+          <Testimonial />
+
+          <Blog />
+
+          <CallToAction />
+        </main>
+
+        <Footer />
+      </div>
+    </div>
+  );
+};
 
 export default LandingPage;
