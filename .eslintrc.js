@@ -2,11 +2,11 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
+    node: true,
   },
   extends: [
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
-    'standard',
     'prettier',
     'eslint:recommended',
     'plugin:import/errors',
@@ -25,7 +25,7 @@ module.exports = {
     ecmaVersion: 2020,
     sourceType: 'module',
   },
-  plugins: ['react', 'import', 'jsx-a11y', 'promise', 'standard', 'prettier', 'html', 'react-hooks'],
+  plugins: ['react', 'import', 'jsx-a11y', 'promise', 'prettier', 'html', 'react-hooks'],
   rules: {
     // delete rule for production only for starter purposes
     'jsx-a11y/anchor-is-valid': [0],

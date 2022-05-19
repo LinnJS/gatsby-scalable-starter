@@ -3,4 +3,4 @@ import { storiesOf } from '@storybook/react';
 
 import Button from './index';
 
-storiesOf('Primitives', module).add('Button', () => <Button>Click Here!</Button>);
+storiesOf('Primitives').add('Button', () => <Button>Click Here!</Button>);
